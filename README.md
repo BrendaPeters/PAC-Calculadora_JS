@@ -1,14 +1,24 @@
-# 🧮 Calculadora em JavaScript
+# 🧮 PAC - Calculadora em JavaScript
+
+Projeto extensionista do 1º Semestre de Engenharia de Software.
 
 Calculadora desenvolvida com HTML, CSS e JavaScript puro. Ideal para praticar lógica de programação e manipulação do DOM.
 
-Funcionalidades:
+### Funcionalidades
 
-- Operações matemáticas básicas (soma, subtração, multiplicação, divisão, porcentagem)
+- Operações básicas (soma, subtração, multiplicação, divisão, porcentagem)
 - Suporte a entrada pelo teclado
 - Tratamento de erros
 - Limpeza do display e exclusão de caracteres
 - Controle de nova operação após resultado
+
+---
+
+## Mini-site
+
+O projeto também conta com uma [página inicial](https://BrendaPeters.github.io/PAC-Calculadora_JS) reunindo uma breve descrição e materiais de estudo sobre JavaScript.
+
+A calculadora pode ser acessada diretamente em [/calculadora](calculadora/).
 
 ---
 
@@ -34,8 +44,8 @@ const buttons = document.querySelectorAll("button");
 ```
 
 - `document` representa a página inteira
-- `getElementById("display")"` retorna um elemento específico pelo seu ID
-- `querySelectorAll("button")"` retorna todos os botões da página
+- `getElementById("display")` retorna um elemento específico pelo seu ID
+- `querySelectorAll("button")` retorna todos os botões da página
 - `const` declara uma variável que não será reatribuída
 
 ---
@@ -78,7 +88,7 @@ function calcular() {
 }
 ```
 
-### Detalhamento:
+### Detalhamento
 
 - **`function`** cria um bloco de código reutilizável
 - **`try/catch`** captura erros em tempo de execução, evitando que a aplicação quebre
