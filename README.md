@@ -1,71 +1,59 @@
-# 🧮 PAC - Calculadora em JavaScript
+# 👾Projeto extensionista do 1º Semestre de Engenharia de Software apresenta:
 
-Projeto extensionista do 1º Semestre de Engenharia de Software.
+## 🧮 Calculadora em JavaScript
 
-Calculadora desenvolvida com HTML, CSS e JavaScript puro. Ideal para praticar lógica de programação e manipulação do DOM.
+Uma calculadora feita com HTML, CSS e JavaScript puro.
 
-### Funcionalidades
-
+Onde você irá aprender:
+```txt
 - Operações básicas (soma, subtração, multiplicação, divisão, porcentagem)
-- Suporte a entrada pelo teclado
+- Uso pelo teclado (dá pra digitar sem clicar)
 - Tratamento de erros
 - Limpeza do display e exclusão de caracteres
-- Controle de nova operação após resultado
+- Controle de nova operação
+```
 
----
+## Antes de começar: o que é JavaScript? 🐣
 
-## Mini-site
+JavaScript (JS) é o que dá vida ao site.
 
-O projeto também conta com uma [página inicial](https://BrendaPeters.github.io/PAC-Calculadora_JS) reunindo uma breve descrição e materiais de estudo sobre JavaScript.
+- **HTML** monta a estrutura 
+- **CSS** cuida do visual
+- **JavaScript** faz a magia acontecer
 
-A calculadora pode ser acessada diretamente em [/calculadora](calculadora/).
+É ele que lida com cliques, teclas, cálculos, animações e tudo o que faz a página deixar de ser estática e **responder** aos usuários.
 
----
 
-## Antes de começar: o que é JavaScript?
+## Passo 1 — Localizando os elementos na tela🖼
 
-JavaScript (JS) é a linguagem responsável por adicionar comportamento às páginas web.
-
-- **HTML** define a estrutura
-- **CSS** cuida da aparência
-- **JavaScript** trata da interatividade
-
-É ele quem gerencia cliques, teclas, cálculos, animações e alterações na tela — tudo que faz a página responder às ações do usuário.
-
----
-
-## Passo 1 — Localizando os elementos na tela
-
-O JavaScript precisa primeiro localizar os elementos do HTML para poder manipulá-los:
+Para a calculadora funcionar, o JS precisa achar o visor e os botões no HTML:
 
 ```js
 const display = document.getElementById("display");
 const buttons = document.querySelectorAll("button");
 ```
 
-- `document` representa a página inteira
-- `getElementById("display")` retorna um elemento específico pelo seu ID
-- `querySelectorAll("button")` retorna todos os botões da página
-- `const` declara uma variável que não será reatribuída
+- `document` é a página inteira
+- `getElementById("display")"` acha um elemento específico pelo ID
+- `querySelectorAll("button")"` pega todos os botões de uma vez
+- `const` diz que essa lógica não vai ser trocada depois (fixa)
 
----
 
-## Passo 2 — Variável de controle
+## Passo 2 — Variável de controle🕹
 
 ```js
 let novoNumero = false;
 ```
 
-Essa variável indica se o próximo número digitado deve iniciar um novo valor ou continuar o atual.
+Essa variável controla quando a calculadora deve **começar um número novo** em vez de continuar o anterior.
 
-**Exemplo:** após calcular `5 + 5 = 10`, se o usuário digitar `3`, o display deve mostrar `3` e não `103`. Quando `novoNumero` está como `true`, o display é limpo antes de inserir o próximo caractere.
+**Exemplo:** você calcula `5 + 5 = 10` e depois aperta `3`. Se não tivesse esse controle, apareceria `103` , o que não é correto. Com a flag, o display limpa e mostra `3` como deve ser.
 
-- `let` declara uma variável que pode ter seu valor alterado
-- `true`/`false` são valores booleanos
+- `let` cria uma variável que pode mudar de valor
+- `true`/`false` são os valores lógicos (booleanos)
 
----
 
-## Passo 3 — A função `calcular()`
+## Passo 3 — A função `calcular()` 🧠
 
 ```js
 function calcular() {
@@ -88,19 +76,18 @@ function calcular() {
 }
 ```
 
-### Detalhamento
+### O que acontece:
 
-- **`function`** cria um bloco de código reutilizável
-- **`try/catch`** captura erros em tempo de execução, evitando que a aplicação quebre
-- **`display.value`** contém o texto atual do visor
-- **`.trim()`** remove espaços em branco no início e no fim da string
-- **`if (!expr) return;`** interrompe a função se o display estiver vazio
-- **`Function('"use strict"; return (' + expr + ')')()`** converte a string digitada (ex: `"5+5"`) em código executável e retorna o resultado
-- **`isFinite()`** verifica se o resultado é um número válido — valores como `Infinity` são rejeitados
+- **`function`** cria um bloco de código reutilizável (o "cérebro" da calculadora)
+- **`try/catch`** tenta executar e se algo der errado, captura o erro sem quebrar a página
+- **`display.value`** é o texto que está aparecendo no visor
+- **`.trim()`** remove espaços extras no começo e fim
+- **`if (!expr) return;`** — se o display estiver vazio, a função para por ali mesmo
+- **`Function('...')()`** pega o texto digitado (ex: `"5+5"`) e vira código de verdade, devolvendo o resultado
+- **`isFinite()`** checa se o resultado é um número válido e o `Infinity` não passa
 
----
 
-## Passo 4 — Botões e eventos de clique
+## Passo 4 — Botões e eventos de clique🎮
 
 ```js
 for (let button of buttons) {
@@ -130,22 +117,21 @@ for (let button of buttons) {
 }
 ```
 
-O código percorre todos os botões e adiciona um evento de clique a cada um. A ação executada depende do texto do botão:
+O código passa por cada botão e **escuta o clique**. Quando alguém clica:
 
 | Botão | Ação |
 |---|---|
-| `C` | limpa o display |
-| `←` | remove o último caractere |
+| `C` | limpa tudo |
+| `←` | apaga o último caractere |
 | `=` | executa o cálculo |
-| `+`, `-`, `*`, `/`, `%` | adiciona o operador ao display |
-| demais | adiciona o caractere ao display |
+| `+`, `-`, `*`, `/`, `%` | adiciona o operador |
+| qualquer outro | adiciona o número no display |
 
-- **`slice(0, -1)`** retorna a string sem o último caractere
-- **`includes()`** verifica se um valor está presente em uma string
+- **`slice(0, -1)`** é um jeito simples de remover o último caractere de um texto
+- **`includes()`** verifica se algo está dentro de uma string, ele verifica se "tem `+` nessa lista"
 
----
 
-## Passo 5 — Suporte ao teclado
+## Passo 5 — Suporte ao teclado🎹
 
 ```js
 document.addEventListener("keydown", function (e) {
@@ -168,26 +154,27 @@ document.addEventListener("keydown", function (e) {
 });
 ```
 
-O evento `keydown` é disparado quando uma tecla é pressionada. A propriedade `e.key` informa qual tecla foi acionada.
+Dá pra usar a calculadora inteira pelo teclado:
 
-| Tecla | Função |
+| Tecla | O que faz |
 |---|---|
-| `Enter` ou `=` | executa o cálculo |
-| `Backspace` | remove o último caractere |
-| `Escape` | limpa o display |
-| `0-9`, `.` | insere números |
-| `+`, `-`, `*`, `/`, `%` | insere operadores |
+| `Enter` ou `=` | calcula |
+| `Backspace` | apaga o último |
+| `Escape` | limpa tudo |
+| `0-9`, `.` | digita números |
+| `+`, `-`, `*`, `/`, `%` | operadores |
 
----
+O evento `keydown` é disparado no momento em que você aperta qualquer tecla, e `e.key` diz **qual tecla foi**.
 
-## Objetivo do projeto
 
-Este projeto aborda conceitos fundamentais do JavaScript:
+## Pra que serve esse projeto❓
+
+é um projeto simples onde cobrimos o essencial do JavaScript:
 
 - lógica de programação
-- eventos de clique e teclado
+- eventos (clique e teclado)
 - funções
 - tratamento de erros
 - manipulação de strings e números
 
-Um exercício prático para quem está começando a estudar JavaScript e quer ver o código em ação.
+# 🎉Obrigado pela participação!🎉
