@@ -3,41 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora</title>
+  <title>PAC - Calculadora JS</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <div class="calculadora">
-    <input type="text" id="display" readonly>
-
-    <div class="botoes">
-      <button>←</button>
-      <button class="btn-clear">C</button>
-      <button class="btn-op">%</button>
-      <button class="btn-op">/</button>
-
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button class="btn-op">*</button>
-
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button class="btn-op">-</button>
-
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button class="btn-op">+</button>
-
-      <button class="btn-zero">0</button>
-      <button>.</button>
-      <button class="btn-equal">=</button>
+  <header class="hero">
+    <div class="container">
+      <div class="badge">Projeto PAC</div>
+      <h1>Calculadora em <span class="highlight">JavaScript</span></h1>
+      <p class="subtitle">
+        Projeto simples de calculadora desenvolvido com HTML, CSS e JavaScript puro,
+        criado como parte da disciplina de Programação de Aplicações Computacionais.
+      </p>
+      <a href="calculadora/" class="btn" target="_blank">Abrir Calculadora &rarr;</a>
     </div>
-  </div>
+  </header>
 
-  <script src="script.js"></script>
+  <section class="sobre">
+    <div class="container">
+      <h2>Sobre o projeto</h2>
+      <p>
+        Uma calculadora funcional com operações básicas, suporte a teclado,
+        tratamento de erros e uma interface visual limpa. O código explora
+        conceitos fundamentais de JavaScript como manipulação do DOM, eventos,
+        funções e lógica de programação.
+      </p>
+      <div class="tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>DOM</span>
+        <span>Eventos</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="materiais">
+    <div class="container">
+      <h2>Materiais de estudo</h2>
+      <p class="section-desc">Links e referências para quem está aprendendo JavaScript.</p>
+
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-icon">&#128218;</div>
+          <h3>Documentação</h3>
+          <ul>
+            <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="_blank">MDN JavaScript</a></li>
+            <li><a href="https://javascript.info/" target="_blank">JavaScript.info</a></li>
+            <li><a href="https://www.w3schools.com/js/" target="_blank">W3Schools JS</a></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">&#127916;</div>
+          <h3>Canais no YouTube</h3>
+          <ul>
+            <li><a href="https://www.youtube.com/@CursoemVideo" target="_blank">Curso em Vídeo</a></li>
+            <li><a href="https://www.youtube.com/@rafaellaballerini" target="_blank">Rafaella Ballerini</a></li>
+            <li><a href="https://www.youtube.com/@codigofontetv" target="_blank">Código Fonte TV</a></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">&#127891;</div>
+          <h3>Cursos gratuitos</h3>
+          <ul>
+            <li><a href="https://www.freecodecamp.org/portuguese/learn/javascript-algorithms-and-data-structures/" target="_blank">freeCodeCamp</a></li>
+            <li><a href="https://www.cursoemvideo.com/curso/javascript/" target="_blank">Curso em Vídeo (JS)</a></li>
+            <li><a href="https://www.codecademy.com/learn/introduction-to-javascript" target="_blank">Codecademy</a></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">&#128187;</div>
+          <h3>Ferramentas</h3>
+          <ul>
+            <li><a href="https://codepen.io/" target="_blank">CodePen</a></li>
+            <li><a href="https://jsfiddle.net/" target="_blank">JSFiddle</a></li>
+            <li><a href="https://github.com/BrendaPeters/PAC-Calculadora_JS" target="_blank">Repositório do projeto</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Desenvolvido por Brenda Peters &mdash; PAC &bull; 2026</p>
+    </div>
+  </footer>
+
 </body>
 </html>
