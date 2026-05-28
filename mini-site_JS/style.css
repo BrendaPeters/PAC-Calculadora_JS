@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #191818;
+  color: #ccc;
+  overflow-x: hidden;
+}
+
+/* Decorações sutis */
+
+.code-deco {
+  position: fixed;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  color: #fedd4e0d;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.code-deco:first-child {
+  font-size: 160px;
+  top: -20px;
+  right: 30px;
+}
+
+.code-deco.brace {
+  font-size: 200px;
+  bottom: -40px;
+  left: -20px;
+}
+
+/* Layout principal */
+
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero */
+
+.hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px 40px;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 580px;
+}
+
+.badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fedd4e;
+  background: #fedd4e15;
+  padding: 6px 16px;
+  border-radius: 6px;
+  border: 1px solid #fedd4e25;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 18px;
+  line-height: 1.15;
+}
+
+.accent {
+  color: #fedd4e;
+}
+
+.desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #999;
+  margin-bottom: 24px;
+}
+
+.ylw {
+  color: #fedd4e;
+}
+
+.aprendizado {
+  list-style: none;
+  margin: 0 auto 24px;
+  text-align: left;
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  color: #999;
+  line-height: 1.6;
+}
+
+.tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fedd4e;
+  background: #fedd4e10;
+  padding: 5px 14px;
+  border-radius: 4px;
+  border: 1px solid #fedd4e18;
+}
+
+/* Materiais */
+
+.materiais {
+  padding: 0 24px 48px;
+}
+
+.materiais-content {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.materiais h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fedd4e;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.card {
+  background: #1e1e1e;
+  border: 1px solid #ffffff08;
+  border-radius: 10px;
+  padding: 18px 20px;
+  transition: border-color 0.2s;
+}
+
+.card:hover {
+  border-color: #fedd4e30;
+}
+
+.card::before {
+  content: attr(data-icon);
+  display: block;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #eee;
+  margin-bottom: 10px;
+  letter-spacing: 0.3px;
+}
+
+.card ul {
+  list-style: none;
+}
+
+.card ul li {
+  margin-bottom: 5px;
+}
+
+.card ul li::before {
+  content: "> ";
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: #fedd4e66;
+}
+
+.card ul li a {
+  color: #888;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.15s;
+}
+
+.card ul li a:hover {
+  color: #fedd4e;
+}
+
+/* Footer */
+
+.footer {
+  text-align: center;
+  padding: 20px 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: #444;
+  border-top: 1px solid #ffffff06;
+}
+
+/* Responsivo */
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  .desc {
+    font-size: 15px;
+  }
+
+  .hero {
+    padding: 40px 20px 28px;
+  }
+
+  .materiais {
+    padding: 0 20px 32px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .code-deco {
+    display: none;
+  }
+}
+
+@media (max-height: 700px) {
+  .hero {
+    padding: 32px 24px 20px;
+  }
+
+  .materiais {
+    padding: 0 24px 24px;
+  }
+
+  .badge {
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-size: 34px;
+    margin-bottom: 12px;
+  }
+
+  .desc {
+    margin-bottom: 16px;
+  }
+
+  .card {
+    padding: 14px 16px;
+  }
+}
