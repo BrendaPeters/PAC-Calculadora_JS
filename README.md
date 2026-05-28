@@ -1,13 +1,14 @@
-# 👾Projeto extensionista do 1º Semestre de Engenharia de Software apresenta:
+# 👾 Projeto extensionista — 1º Semestre de Engenharia de Software
 
 ## 🧮 Calculadora em JavaScript
 
-Uma calculadora feita com HTML, CSS e JavaScript puro.
+Site de apresentação do projeto, com descrição e materiais de estudo sobre JavaScript.
+Desenvolvido com HTML, CSS e JavaScript puro.
 
-Onde você irá aprender:
+Tópicos abordados:
 ```txt
 - Operações básicas (soma, subtração, multiplicação, divisão, porcentagem)
-- Uso pelo teclado (dá pra digitar sem clicar)
+- Uso pelo teclado
 - Tratamento de erros
 - Limpeza do display e exclusão de caracteres
 - Controle de nova operação
